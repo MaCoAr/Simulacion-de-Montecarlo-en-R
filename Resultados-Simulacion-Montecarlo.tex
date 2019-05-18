@@ -1,0 +1,128 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Especializacion en Analitica - Universidad Nacional de Colombia},
+            pdfauthor={Mauricio Correa Arango},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Especializacion en Analitica - Universidad Nacional de Colombia}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \subtitle{Decisiones Bajo Incertidumbre en las Organizaciones}
+  \author{Mauricio Correa Arango}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{15 de mayo de 2019}
+
+
+\begin{document}
+\maketitle
+
+\section{Simulacion Montecarlo en R}\label{simulacion-montecarlo-en-r}
+
+\subsection{Objetivo:Cuantos sartenes especiales
+comprar?}\label{objetivocuantos-sartenes-especiales-comprar}
+
+\includegraphics{Resultados-Simulacion-Montecarlo_files/figure-latex/histograma_095-1.pdf}
+
+\includegraphics{Resultados-Simulacion-Montecarlo_files/figure-latex/histograma_110-1.pdf}
+
+\includegraphics{Resultados-Simulacion-Montecarlo_files/figure-latex/histograma_115-1.pdf}
+
+\begin{longtable}[]{@{}lrrrrrrr@{}}
+\caption{Datos Consolidados}\tabularnewline
+\toprule
+X & Valor\_Esperado & Desviacion\_Estandar & Minimo & Maximo &
+Probalidad.Mayor.a.0 & Percentil\_05 & Percentil\_95\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+X & Valor\_Esperado & Desviacion\_Estandar & Minimo & Maximo &
+Probalidad.Mayor.a.0 & Percentil\_05 & Percentil\_95\tabularnewline
+\midrule
+\endhead
+Utilidad\_Total\_Opcion.1. & 1116.680 & 286.8091 & -182 & 1472 & 0.995 &
+510.0 & 1376.15\tabularnewline
+Utilidad\_Total\_Opcion.2. & 1128.322 & 391.1565 & -480 & 1610 & 0.990 &
+375.8 & 1526.00\tabularnewline
+Utilidad\_Total\_Opcion.3. & 1109.053 & 415.8137 & -508 & 1669 & 0.989 &
+351.8 & 1576.00\tabularnewline
+\bottomrule
+\end{longtable}
+
+¿Cual decisión es la ganadora segun cada criterio de incertidumbre?
+
+
+\end{document}

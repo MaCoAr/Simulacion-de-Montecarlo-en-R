@@ -184,9 +184,9 @@ for (i in 1:iteraciones) {
   Acumulado_costos_sartenes_opcion[3] <- Total_costos_SE_opcion[3] + Total_costos_SC_opcion[3] 
     
   # Calcular utilidad
-  Utilidad_Total_Opcion[1] <- Acumulado_ventas_sartenes_opcion[1] - Acumulado_costos_sartenes_opcion[1]
-  Utilidad_Total_Opcion[2] <- Acumulado_ventas_sartenes_opcion[2] - Acumulado_costos_sartenes_opcion[2]
-  Utilidad_Total_Opcion[3] <- Acumulado_ventas_sartenes_opcion[3] - Acumulado_costos_sartenes_opcion[3]
+  Utilidad_Total_Opcion[1] <- round(Acumulado_ventas_sartenes_opcion[1] - Acumulado_costos_sartenes_opcion[1],0)
+  Utilidad_Total_Opcion[2] <- round(Acumulado_ventas_sartenes_opcion[2] - Acumulado_costos_sartenes_opcion[2],0)
+  Utilidad_Total_Opcion[3] <- round(Acumulado_ventas_sartenes_opcion[3] - Acumulado_costos_sartenes_opcion[3],0)
   
   # Asginar vectores a data frame temporal
   df_row_095 <- data.frame(cte_Cantidad_Sartenes_Opcion[1],
@@ -236,3 +236,23 @@ for (i in 1:iteraciones) {
   # Asignar la nueva fila al data frame correspondiente
   opcion_115 <- rbind(opcion_115,df_row_115)  
 }
+
+# Vectores con las utilidades de las tres opciones
+utilidades_095 <- opcion_095 %>%  select(Utilidad_Total_Opcion.1.)
+utilidades_110 <- opcion_110 %>%  select(Utilidad_Total_Opcion.2.)
+utilidades_115 <- opcion_115 %>%  select(Utilidad_Total_Opcion.3.)
+
+# Crear data frame con los datos de las utilidades
+Utilidad <- data.frame(utilidades_095,utilidades_110,utilidades_115)
+
+
+# Limpiar variables de memoria de la simulación
+rm(list = ls(pattern = "cte"))
+rm(list = ls(pattern = "Total"))
+rm(list = ls(pattern = "df_ro"))
+rm(list = ls(pattern = "Acumu"))
+rm(list = ls(pattern = "utilidades_"))
+rm(Precio_Venta_Cadena_Dcto_opcion)
+rm(i)
+#rm(iteraciones)
+rm(Cantidad_Vendida_opcion)

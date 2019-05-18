@@ -1,9 +1,14 @@
+# Librerias a utilizar
+library(dplyr)
+
 # Ejectuar archivo de simulación
 source("Simulacion-Montercarlo-Sartenes-Especiales.R")
 
-# Limpiar variables de memoria de la simulación
-rm(list = ls(pattern = "cte"))
-rm(list = ls(pattern = "Total"))
-rm(list = ls(pattern = "df_ro"))
-rm(list = ls(pattern = "Acumu"))
-#rm(list("i","iteraciones","Cantidad_Vendida_opcion","Precion_Venta_Cadena_Dcto_opcion"))
+# Ejecutar archivo con el análisis de los datos hallados
+source("Analisis-Simulacion-Montecarlo.R")
+
+# Crear documento HTML con los precios promedio x onza 
+knitr::knit2html(rmarkdown::render("Resultados-Simulacion-Montecarlo.Rmd"), stylesheet = 'mystyle.css')
+# Arbir el archivo HTML creado en el navegador por defecto
+htmlFile <- file.path("Resultados-Simulacion-Montecarlo.html")
+rstudioapi::viewer(htmlFile)
