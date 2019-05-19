@@ -1,4 +1,4 @@
-"","Valor Esperado","Desviacion_Estandar","Minimo","Maximo","Probalidad Mayor a 0","Percentil_05","Percentil_95"
-"Utilidad_Total_Opcion.1.",1121.148,294.855999016734,-211,1511,0.994,474.9,1376
-"Utilidad_Total_Opcion.2.",1137.147,368.185667940887,-470,1634,0.997,440.55,1523
-"Utilidad_Total_Opcion.3.",1105.246,408.4570707708,-211,1684,0.988,365.95,1576.15
+"","Opcion","Valor_Esperado","Desviacion_Estandar","Minimo","Maximo","Probalidad Mayor a 0","Percentil_05","Percentil_95"
+"Utilidad_Total_Opcion.1.","Compra 95 Sartenes","1114.85132238142","293.401382300594","-332.795395640341","1472","0.994","507.111919161368","1373"
+"Utilidad_Total_Opcion.2.","Compra 110 Sartenes","1140.64134225814","370.907018886195","-261.792133756052","1667","0.996","424.709035634205","1526.15"
+"Utilidad_Total_Opcion.3.","Compra 115 Sartenes","1109.7775435784","406.025839587113","-297.638705733884","1654","0.992","360.593098999396","1576"

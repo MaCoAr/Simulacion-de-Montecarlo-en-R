@@ -1,5 +1,10 @@
-# Librerias a utilizar
+# Instalar librerias 
+install.packages("dplyr")
+install.packages("moments")
+
+# Librerias a usar
 library(dplyr)
+library(moments)
 
 # Ejectuar archivo de simulación
 source("Simulacion-Montercarlo-Sartenes-Especiales.R")
