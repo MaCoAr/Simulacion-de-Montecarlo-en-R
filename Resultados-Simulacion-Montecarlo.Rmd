@@ -1,5 +1,5 @@
 ---
-title: "Universidad Nacional de Colombia - Especializacion en Analítica"
+title: "Universidad Nacional de Colombia - Especialización en Analítica"
 author: "Profesor:Daniel Henao - Alumno:Mauricio Correa Arango"
 date: "20 de mayo de 2019"
 output:
@@ -7,8 +7,8 @@ output:
   pdf_document: default
 subtitle: Materia:Decisiones Bajo Incertidumbre en las Organizaciones
 ---
-#Simulación Montecarlo en R
-##Objetivo:¿Cuantos sartenes especiales comprar?
+##Simulación Montecarlo en R
+###Objetivo:¿Cuantos sartenes especiales comprar?
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -31,40 +31,38 @@ iteraciones <- 1000
 n_bins = 1 + 3.322 * log10(iteraciones)
 ```
 
-###Enunciado resumido del ejercicio
-```{r enunciado, echo=FALSE}
-rta <- "María es Directora de Compras de artículos del hogar en un gran almacén 'El Roble'. El problema de María es que debe decidir cuántas sartenes especiales debe pedir, sin saber por adelantado cuál será la demanda correspondiente. María está interesada en determinar de qué manera el número de sartenes que ordenará afectará la utilidad esperada de la promoción y la posibilidad de que la promoción gane dinero. Por lo anterior se realizará una simulación montecarlo en la que representaran 1000 opciones de compra para cada una de las siguientes cantidades 95,110,115 respectivamente."
-
-print(rta)
-
-```
-
-###Histogramas por cada opción de compra
+###1. Enunciado resumido del ejercicio
+<p style="text-align: justify">
+María es Directora de Compras de artículos del hogar en un gran almacén 'El Roble'. El problema de María es que debe decidir cuántos sartenes especiales debe pedir, sin saber por adelantado cuál será la demanda correspondiente. María está interesada en determinar de qué manera el número de sartenes que ordenará afectará la utilidad esperada de la promoción y la posibilidad de que la promoción gane dinero.  
+</p>
+<p style="text-align: justify">
+Por lo anterior se realizará una simulación montecarlo en la que representaran 1000 opciones de compra para cada una de las siguientes cantidades de sartenes 95,110,115 respectivamente.
+</p>
+###2. Histogramas por cada opción de compra
 ```{r histograma_095, echo=FALSE}
 ggplot(Utilidad, aes(Utilidad$Utilidad_Total_Opcion.1.)) + 
   geom_histogram(bins = n_bins) +
-  labs(title = "Histograma Sartenes Especiales",subtitle = "Opcion de compra de 95 sartenes", x = "Utilidad" , y = "Frecuencia")
+  labs(title = "Histograma Sartenes Especiales",subtitle = "Opción de compra de 95 sartenes", x = "Utilidad" , y = "Frecuencia")
 ```
 
 ```{r distri_095, echo=FALSE}
-kable(Distribu[1,c(2,3)], caption = "Datos de distrubucion compra 95 sartenes especiales")
+kable(Distribu[1,c(2,3)], caption = "Datos de distrubución compra 95 sartenes especiales")
 
 if(Distribu[1,3]<0){
-  asimetria_text <- paste("La simulacion para la compra de 95 sartenes posee una asimetria negativa de ", round(Distribu[1,3],6) , ", indicando que la cola de la distribucion apunta hacia la izquierda.")
+  asimetria_text <- paste("La simulación para la compra de 95 sartenes posee una asimetría negativa de ", round(Distribu[1,3],6) , ", indicando que la cola de la distribución apunta hacia la izquierda.")
 }else if(Distribu[1,3]>0){
-  asimetria_text <- paste("La simulacion para la compra de 95 sartenes posee una asimetria positiva de, ",round(Distribu[1,3],6) ," indicando que la cola de la distribucion apunta hacia la derecha.")  
+  asimetria_text <- paste("La simulación para la compra de 95 sartenes posee una asimetría positiva de ",round(Distribu[1,3],6) ,", indicando que la cola de la distribución apunta hacia la derecha.")  
 }else{
-  asimetria_text <- paste("La simulacion para la compra de 95 sartenes posee simitria igual a 0, indicando que hay una normalidad en los datos simulados")
+  asimetria_text <- paste("La simulación para la compra de 95 sartenes posee simitría igual a 0, indicando que hay una normalidad en los datos simulados")
 }
 print(asimetria_text)
 
-
 if(Distribu[1,2]<0){
-  curtosis_text <- paste("La simulacion para la compra de 95 sartenes posee una curtosis negativa de ", round(Distribu[1,2],6) , ", indicando que tiene colas mas livianas que la distribucion normal.")
+  curtosis_text <- paste("La simulación para la compra de 95 sartenes posee una curtosis negativa de ", round(Distribu[1,2],6) ,", indicando que tiene una distribución platicúrtica.")
 }else if(Distribu[1,2]>0){
-  curtosis_text <- paste("La simulacion para la compra de 95 sartenes posee una curtosis positiva de, ",round(Distribu[1,2],6) ," indicando que tiene colas mas pesadas que la distribucion normal.")  
+  curtosis_text <- paste("La simulación para la compra de 95 sartenes posee una curtosis positiva de ",round(Distribu[1,2],6) ,", indicando que tiene una distribución leptocúrtica.")  
 }else{
-  curtosis_text <- paste("La simulacion para la compra de 95 sartenes posee una curtosis igual a 0, indicando que hay una normalidad en los datos simulados.")
+  curtosis_text <- paste("La simulación para la compra de 95 sartenes posee una curtosis igual a 0, indicando que tiene una distribución mesocúrtica.")
 }
 print(curtosis_text)
 ```
@@ -72,28 +70,27 @@ print(curtosis_text)
 ```{r histograma_110, echo=FALSE}
 ggplot(Utilidad, aes(Utilidad$Utilidad_Total_Opcion.2.)) + 
   geom_histogram(bins = n_bins) +
-  labs(title = "Histograma Sartenes Especiales",subtitle = "Opcion de compra de 110 sartenes", x = "Utilidad" , y = "Frecuencia")
+  labs(title = "Histograma Sartenes Especiales",subtitle = "Opción de compra de 110 sartenes", x = "Utilidad" , y = "Frecuencia")
 ```
 
 ```{r distri_110, echo=FALSE}
-kable(Distribu[2,c(2,3)], caption = "Datos de distrubucion compra 110 sartenes especiales")
+kable(Distribu[2,c(2,3)], caption = "Datos de distrubución compra 110 sartenes especiales")
 
 if(Distribu[2,3]<0){
-  asimetria_text <- paste("La simulacion para la compra de 110 sartenes posee una asimetria negativa de ", round(Distribu[2,3],6) , ", indicando que la cola de la distribucion apunta hacia la izquierda.")
+  asimetria_text <- paste("La simulación para la compra de 110 sartenes posee una asimetría negativa de ", round(Distribu[2,3],6) , ", indicando que la cola de la distribución apunta hacia la izquierda.")
 }else if(Distribu[2,3]>0){
-  asimetria_text <- paste("La simulacion para la compra de 110 sartenes posee una asimetria positiva de, ",round(Distribu[2,3],6) ," indicando que la cola de la distribucion apunta hacia la derecha.")  
+  asimetria_text <- paste("La simulación para la compra de 110 sartenes posee una asimetría positiva de, ",round(Distribu[2,3],6) ," indicando que la cola de la distribución apunta hacia la derecha.")  
 }else{
-  asimetria_text <- paste("La simulacion para la compra de 110 sartenes posee simitria igual a 0, indicando que hay una normalidad en los datos simulados")
+  asimetria_text <- paste("La simulación para la compra de 110 sartenes posee simitría igual a 0, indicando que hay una normalidad en los datos simulados")
 }
 print(asimetria_text)
 
-
 if(Distribu[2,2]<0){
-  curtosis_text <- paste("La simulacion para la compra de 110 sartenes posee una curtosis negativa de ", round(Distribu[2,2],6) , ", indicando que tiene colas mas livianas que la distribucion normal.")
+  curtosis_text <- paste("La simulación para la compra de 110 sartenes posee una curtosis negativa de ", round(Distribu[2,2],6) , ", indicando que tiene una distribución platicúrtica.")
 }else if(Distribu[2,2]>0){
-  curtosis_text <- paste("La simulacion para la compra de 110 sartenes posee una curtosis positiva de, ",round(Distribu[2,2],6) ," indicando que tiene colas mas pesadas que la distribucion normal.")  
+  curtosis_text <- paste("La simulación para la compra de 110 sartenes posee una curtosis positiva de ",round(Distribu[2,2],6) ,", indicando que tiene una distribución leptocúrtica.")  
 }else{
-  curtosis_text <- paste("La simulacion para la compra de 110 sartenes posee una curtosis igual a 0, indicando que hay una normalidad en los datos simulados.")
+  curtosis_text <- paste("La simulación para la compra de 110 sartenes posee una curtosis igual a 0, indicando que tiene una distribución mesocúrtica.")
 }
 print(curtosis_text)
 ```
@@ -101,40 +98,39 @@ print(curtosis_text)
 ```{r histograma_115, echo=FALSE}
 ggplot(Utilidad, aes(Utilidad$Utilidad_Total_Opcion.3.)) + 
   geom_histogram(bins = n_bins) +
-  labs(title = "Histograma Sartenes Especiales",subtitle = "Opcion de compra de 115 sartenes", x = "Utilidad" , y = "Frecuencia")
+  labs(title = "Histograma Sartenes Especiales",subtitle = "Opción de compra de 115 sartenes", x = "Utilidad" , y = "Frecuencia")
 ```
 
 ```{r distri_115, echo=FALSE}
-kable(Distribu[3,c(2,3)], caption = "Datos de distrubucion compra 115 sartenes especiales")
+kable(Distribu[3,c(2,3)], caption = "Datos de distrubución compra 115 sartenes especiales")
 
 if(Distribu[3,3]<0){
-  asimetria_text <- paste("La simulacion para la compra de 110 sartenes posee una asimetria negativa de ", round(Distribu[3,3],6) , ", indicando que la cola de la distribucion apunta hacia la izquierda.")
+  asimetria_text <- paste("La simulación para la compra de 115 sartenes posee una asimetría negativa de ", round(Distribu[3,3],6) , ", indicando que la cola de la distribución apunta hacia la izquierda.")
 }else if(Distribu[3,3]>0){
-  asimetria_text <- paste("La simulacion para la compra de 110 sartenes posee una asimetria positiva de, ",round(Distribu[3,3],6) ," indicando que la cola de la distribucion apunta hacia la derecha.")  
+  asimetria_text <- paste("La simulación para la compra de 115 sartenes posee una asimetría positiva de, ",round(Distribu[3,3],6) ," indicando que la cola de la distribución apunta hacia la derecha.")  
 }else{
-  asimetria_text <- paste("La simulacion para la compra de 110 sartenes posee simitria igual a 0, indicando que hay una normalidad en los datos simulados")
+  asimetria_text <- paste("La simulación para la compra de 115 sartenes posee simitría igual a 0, indicando que hay una normalidad en los datos simulados")
 }
 print(asimetria_text)
 
-
 if(Distribu[3,2]<0){
-  curtosis_text <- paste("La simulacion para la compra de 110 sartenes posee una curtosis negativa de ", round(Distribu[3,2],6) , ", indicando que tiene colas mas livianas que la distribucion normal.")
+  curtosis_text <- paste("La simulación para la compra de 115 sartenes posee una curtosis negativa de ", round(Distribu[3,2],6) , ", indicando que tiene una distribución platicúrtica.")
 }else if(Distribu[3,2]>0){
-  curtosis_text <- paste("La simulacion para la compra de 110 sartenes posee una curtosis positiva de, ",round(Distribu[3,2],6) ," indicando que tiene colas mas pesadas que la distribucion normal.")  
+  curtosis_text <- paste("La simulación para la compra de 115 sartenes posee una curtosis positiva de ",round(Distribu[3,2],6) ,", indicando que tiene una distribución leptocúrtica.")  
 }else{
-  curtosis_text <- paste("La simulacion para la compra de 110 sartenes posee una curtosis igual a 0, indicando que hay una normalidad en los datos simulados.")
+  curtosis_text <- paste("La simulación para la compra de 115 sartenes posee una curtosis igual a 0, indicando que tiene una distribución mesocúrtica.")
 }
 print(curtosis_text)
 ```
 
-###Datos estadisticos consolidados de la simulación
+###3. Datos estadísticos consolidados de la simulación
 ```{r tabla, echo=FALSE}
   kable(DatosRes[,c(2:9)])
 ```
 
-###¿Cual decisión es la ganadora segun cada criterio de incertidumbre?
+###4. ¿Cual decisión es la ganadora según cada criterio de incertidumbre?
 ```{r conclusion, echo=FALSE}
-rta <- "Los datos arrojados por dicha simulación se visualizan en la tabla anterior."
+rta <- "Los datos arrojados por dicha simulación se visualizan en la tabla anterior. Esta tabla tiene el campo 'probalidad > 0' la información de esta columna hace referencia la robustez de los datos sitenticos de la simulación indicando la probabilidad de obtener una utilidad superior y garantizando que tiene un 99.6% de obtener como mínimo una utilidad de 1526.15 y una máxima de 1667. Por lo anterior se le recomienda a Maria comprar una cantidad de 110 Sartenes."
 
 print(rta)
 ```

@@ -7,9 +7,10 @@
 # https://www.um.es/docencia/pguardio/documentos/Tec_ade.pdf 
 # https://www.elsevier.es/es-revista-atencion-primaria-27-articulo-utilizacion-metodos-robustos-estadistica-inferencial-13049898 (cool)
 # https://support.minitab.com/es-mx/minitab/18/help-and-how-to/statistics/basic-statistics/supporting-topics/data-concepts/how-skewness-and-kurtosis-affect-your-distribution/
+# http://www.spssfree.com/curso-de-spss/analisis-descriptivo/medidas-de-distribucion-curtosis-asimetria.html
 
 
-opcion <- c("Compra 95 Sartenes","Compra 110 Sartenes","Compra 115 Sartenes")
+opcion <- c("Comprar 95","Comprar 110","Comprar 115")
 
 #### Hallar los valores de asimetria y curtosis de los datos utilidad ####
 # curtosis_1 <- kurtosis(Utilidad$Utilidad_Total_Opcion.1.)

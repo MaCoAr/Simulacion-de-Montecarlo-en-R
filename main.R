@@ -16,4 +16,4 @@ source("Analisis-Simulacion-Montecarlo.R")
 knitr::knit2html(rmarkdown::render("Resultados-Simulacion-Montecarlo.Rmd"), stylesheet = 'mystyle.css')
 # Arbir el archivo HTML creado en el navegador por defecto
 htmlFile <- file.path("Resultados-Simulacion-Montecarlo.html")
-rstudioapi::viewer(htmlFile)
+#rstudioapi::viewer(htmlFile)
