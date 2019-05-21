@@ -129,9 +129,6 @@ print(curtosis_text)
 ```
 
 ###4. ¿Cual decisión es la ganadora según cada criterio de incertidumbre?
-```{r conclusion, echo=FALSE}
-rta <- "Los datos arrojados por dicha simulación se visualizan en la tabla anterior. Esta tabla tiene el campo 'probalidad > 0' la información de esta columna hace referencia la robustez de los datos sitenticos de la simulación indicando la probabilidad de obtener una utilidad superior y garantizando que tiene un 99.6% de obtener como mínimo una utilidad de 1526.15 y una máxima de 1667. Por lo anterior se le recomienda a Maria comprar una cantidad de 110 Sartenes."
-
-print(rta)
-```
-
+<p style="text-align: justify">
+Los datos arrojados por dicha simulación se visualizan en la tabla anterior. Esta tabla tiene el campo 'probalidad > 0', la información de esta columna hace referencia a la robustez, que nos indica de las 1000 iteraciones en que porcentaje de probabilidad se va obtener utilidad. Analizando los demás datos estadisticos se visualiza que para la compra de 95 sartenes el cual presenta la mayor robustez, el 95% de los datos esta por debajo de 1367 de utilidad. Es decir que solo se tiene una probailidad del 5% de obtener utilidades por encima de este valor. Interpretando las dos otras dos propuestas de compra (110 y 115) se evidencia que si bien presentan menor robustez que la compra de 95 sartenes, pueden proporcionar una mayor utilidad, para estos dos pedidos la utilidad máxima es superior a 1620. Finalmente si se compara el pedido de 110 vs 115 este primero presenta un valor esperado más alto (1136.40 vs 1113.06) y una desviación estandar más baja, lo que quiere decir que la dispersión de las utilidades respecto a la media es menor para el pedio de 110. Por lo anterior se le recomienda a Maria comprar una cantidad de 110 Sartenes.
+</p>
